@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const handleLanguageSelect = (event) => {
+    setSelectedLanguage(event.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <label>
+        English
+        <input type="radio" value="en" checked={selectedLanguage === 'en'} onClick={handleLanguageSelect} />
+      </label>
+      <label>
+        中文
+        <input type="radio" value="zh" checked={selectedLanguage === 'zh'} onClick={handleLanguageSelect} />
+      </label>
+      <p>Your selected language is: {selectedLanguage} </p>
+      <p>Your have switch language for 0 times</p>
+      <p>Welcome to the world of wonder</p>
     </div>
   );
 }
