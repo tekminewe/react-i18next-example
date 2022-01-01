@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="mx-auto bg-white p-4 rounded space-y-2">
-        <div className='space-x-4'>
+        <div className="space-x-4">
           <label>
             English
             <input
@@ -25,7 +25,7 @@ const App = () => {
               value="en"
               checked={selectedLanguage === 'en'}
               onClick={handleLanguageSelect}
-              className='ml-2'
+              className="ml-2"
             />
           </label>
           <label>
@@ -35,13 +35,15 @@ const App = () => {
               value="zh"
               checked={selectedLanguage === 'zh'}
               onClick={handleLanguageSelect}
-              className='ml-2'
+              className="ml-2"
             />
           </label>
         </div>
-        <p>{t('selectedLanguage', { language: selectedLanguage })}</p>
-        <p>{t('numOfTimesSwitchingLanguage', { count })}</p>
-        <p>{t('welcome')}</p>
+        <section>
+          <p>{t('selectedLanguage', { language: selectedLanguage })}</p>
+          <p>{t('numOfTimesSwitchingLanguage', { count })}</p>
+          <p>{t('welcome')}</p>
+        </section>
       </div>
     </div>
   );
