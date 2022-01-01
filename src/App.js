@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
 
 import './i18n.config';
 
 const App = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
   const [count, setCount] = useState(0);
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+
   const handleLanguageSelect = (event) => {
     setSelectedLanguage(event.target.value);
-    i18next.changeLanguage(event.target.value);
-    setCount(count + 1);
+    i18n.changeLanguage(event.target.value);
+    setCount(count => count + 1);
   };
 
   return (
@@ -23,7 +23,7 @@ const App = () => {
             <input
               type="radio"
               value="en"
-              checked={selectedLanguage === 'en'}
+              checked={selectedLanguage.includes('en')}
               onClick={handleLanguageSelect}
               className="ml-2"
             />
@@ -33,16 +33,16 @@ const App = () => {
             <input
               type="radio"
               value="zh"
-              checked={selectedLanguage === 'zh'}
+              checked={selectedLanguage.includes('zh')}
               onClick={handleLanguageSelect}
               className="ml-2"
             />
           </label>
         </div>
         <section>
+          <p>{t('welcome')}</p>
           <p>{t('selectedLanguage', { language: selectedLanguage })}</p>
           <p>{t('numOfTimesSwitchingLanguage', { count })}</p>
-          <p>{t('welcome')}</p>
         </section>
       </div>
     </div>
