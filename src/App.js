@@ -30,8 +30,10 @@ const App = () => {
               className='ml-2'
             />
           </label>
+          <section>
+            
+          </section>
         </div>
-        <p>Welcome to the world of wonder</p>
       </div>
     </div>
   );
