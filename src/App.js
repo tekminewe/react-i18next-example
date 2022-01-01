@@ -15,7 +15,7 @@ const App = () => {
             <input
               type="radio"
               value="en"
-              checked={selectedLanguage === 'en'}
+              checked={selectedLanguage.includes('en')}
               onClick={handleLanguageSelect}
               className="ml-2"
             />
@@ -25,7 +25,7 @@ const App = () => {
             <input
               type="radio"
               value="zh"
-              checked={selectedLanguage === 'zh'}
+              checked={selectedLanguage.includes('zh')}
               onClick={handleLanguageSelect}
               className="ml-2"
             />
