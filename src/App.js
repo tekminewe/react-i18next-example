@@ -31,8 +31,6 @@ const App = () => {
             />
           </label>
         </div>
-        <p>Your selected language is: {selectedLanguage} </p>
-        <p>Your have switch language for 0 times</p>
         <p>Welcome to the world of wonder</p>
       </div>
     </div>
