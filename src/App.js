@@ -11,7 +11,7 @@ const App = () => {
   const handleLanguageSelect = (event) => {
     setSelectedLanguage(event.target.value);
     i18n.changeLanguage(event.target.value);
-    setCount(count => count + 1);
+    setCount((count) => count + 1);
   };
 
   return (
